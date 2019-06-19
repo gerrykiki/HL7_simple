@@ -19,5 +19,4 @@ var msg = new hl7.Message(
 console.log('******sending message*****')
 client.send(msg, function(err, ack) {
   console.log('******ack received*****')
-  console.log(ack.log());
 });

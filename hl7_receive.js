@@ -1,5 +1,6 @@
 var hl7 = require('simple-hl7');
- 
+var fs = require('fs');
+
 ///////////////////SERVER/////////////////////
 var app = hl7.tcp();
  
@@ -7,6 +8,12 @@ app.use(function(req, res, next) {
   //req.msg is the HL7 message
   console.log('******message received*****')
   console.log(req.msg.log());
+  fs.appendFile('HL7_receive.txt', req.msg.log() + '\n', function (err) {
+    if (err)
+        console.log(err);
+    else
+        console.log('Write Success');
+  });
   next();
 })
  
