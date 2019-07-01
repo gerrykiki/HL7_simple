@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "net": "^1.0.2",
     "simple-hl7": "^3.1.0"
   }
 }

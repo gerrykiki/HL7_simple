@@ -1,8 +1,7 @@
 var hl7 = require('simple-hl7');
 var fs = require('fs');
-
-///////////////////SERVER/////////////////////
 var app = hl7.tcp();
+///////////////////SERVER/////////////////////
  
 app.use(function(req, res, next) {
   //req.msg is the HL7 message
@@ -38,4 +37,4 @@ app.use(function(err, req, res, next) {
 });
 
 //Listen on port 7777
-app.start(7777);
+app.start(5555);

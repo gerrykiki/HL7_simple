@@ -1,7 +1,7 @@
 var hl7 = require('simple-hl7');
 
 ///////////////////CLIENT/////////////////////
-var client = hl7.Server.createTcpClient('localhost', 7777);
+var client = hl7.Server.createTcpClient('localhost', 8124);
  
 //create a message
 var msg = new hl7.Message(
