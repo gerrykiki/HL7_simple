@@ -1,4 +1,5 @@
 var net = require('net');
+var fs = require('fs');
 
 var server = net.createServer(function (socket) {
 
@@ -7,7 +8,14 @@ var server = net.createServer(function (socket) {
 
         // write event: 傳輸資料的事件
         socket.write('hi', function () {
-            console.log('server:收到 client端 傳輸資料為' + data)
+            console.log('server:收到 client端 傳輸資料為'+data);
+
+            fs.appendFile('HL7_receive.txt', data + '\t' + new Date() + '\n', function (err) {
+                if (err)
+                    console.log(err);
+                else
+                    console.log('Write Success');
+            });
         })
 
     })
