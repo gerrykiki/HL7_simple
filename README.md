@@ -9,4 +9,4 @@ TCP_receive.js:修改port (line:26)
 
 npm install -save
 
-node TCP-receive.js
+node TCP_receive.js
